@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+// Import custom variables (overrides Bootstrap default variables)
+@import "./scss/variables";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Import custom styles
+@import "./scss/global";
+@import "./scss/sidebar";
+@import "./scss/content";
+@import "./scss/card";
+@import "./scss/timeline";
+@import "./scss/portfolio-filter-controls";
+@import "./scss/fancy-hr";

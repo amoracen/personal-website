@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+html,
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+body {
+	background: white;
+	overflow-x: hidden;
+
+	@media (min-width: 768px) {
+		overflow-y: scroll;
+	}
+}
+.container {
+	width: 100%;
+	background: $content-bg-pacific-dream;
+}
+/* Style the footer */
+.footer {
+	background: #0f3443;
+	padding: 0.5em 0;
+	text-align: center;
+	color: white;
+}
+header {
+	background: #0f3443;
+	padding: 1em 0;
+
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	a.logo {
+		font-weight: bold;
+		&:hover {
+			color: white;
+		}
+	}
+
+	nav {
+		float: right;
+		padding-right: 5em;
+		font-size: 20px;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			display: flex;
+
+			li a {
+				padding: 0.5em;
+
+				&:hover {
+					background: darken($primary, 25%);
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 16px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+p {
+	font-size: 14px;
+}
+
+p.large-copy {
+	font-size: 16px;
+}
+
+p.copy {
+	font-size: 14px;
+}
+
+.caption {
+	font-size: 12px;
+}
+
+@mixin text-link--large {
+	font-size: 16px;
+}
+
+.text-link--small {
+	font-size: 14px;
+}
+
+label,
+.label {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.label-large {
+	font-size: 16px;
+}
+
+.wrapper .container {
+	border-radius: 6px;
+	//box-shadow: 0 1px 6px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+
+	box-shadow: 10px 10px 5px grey;
+
+	@media (min-width: 1400px) {
+		margin: 50px auto;
+	}
+}
+
+.background-blue {
+	/*background: linear-gradient(#17FAF6, #214AEB);*/
+	background: $content-bg-pacific-dream;
+}
+
+.blue {
+	color: $blue;
+}
+
+.porfolioScrollBar {
+	height: 480px;
+	overflow-y: scroll;
+}

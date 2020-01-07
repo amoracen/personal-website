@@ -1,0 +1,166 @@
+<div class="wrapper pt-1">
+    <div class="container">
+        <div class="row">
+            <!-- Navigation -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white sidebar background-blue">
+                <div class="col-md-10 mx-auto">
+                    <figure class="profile-image mx-auto">
+                        <img class="img-fluid rounded-circle" src="assets/img/profileImage.jpg" alt="Profile photo">
+                        <figcaption class="text-center"><small class="d-block">Alejandro</small>Moracen</figcaption>
+                    </figure>
+                    <ul class="list-unstyled main-menu mt-2">
+                        <li><a class="font-weight-bold text-white" href="#about-me" (click)="toggleA()"><i>
+                                    <fa-icon [icon]="['fas', 'user-tie']"></fa-icon>
+                                </i>About
+                                Me</a></li>
+                        <li><a class="font-weight-bold text-white" href="assets/resumeTips.pdf" target="_blank"><i>
+                                    <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon>
+                                </i>Resume</a>
+                        </li>
+                        <li><a class="font-weight-bold text-white" href="#portfolio" (click)="toggleP()"><i>
+                                    <fa-icon [icon]="['fas', 'toolbox']"></fa-icon>
+                                </i>Portfolio</a></li>
+                        <li><a class="font-weight-bold text-white" href="#contact" (click)="toggleC()"><i>
+                                    <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+                                </i>Contact Me</a></li>
+                    </ul>
+                    <ul class="list-unstyled list-inline mt-3 text-center">
+                        <li class="list-inline-item px-2"><a class="text-white" href="https://www.linkedin.com/m/login/"
+                                target="_blank"><i>
+                                    <fa-icon [icon]="['fab', 'linkedin-in']" size="lg"></fa-icon>
+                                </i></a>
+                        </li>
+                        <li class="list-inline-item px-2"><a class="text-white" href="https://github.com/"
+                                target="_blank"><i>
+                                    <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
+                                </i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- About me Section -->
+            <div id="about-me" class="col-12 col-sm-12 col-md-12 col-lg-8 content about-me active pt-5"
+                *ngIf="isViewableAboutMe">
+                <div class="card">
+                    <h3 class="sideline font-weight-bold mb-1">About Me</h3>
+                    <div class="label title mb-2">
+                        <h4><i>
+                                <fa-icon [icon]="['fas', 'code']"></fa-icon>
+                            </i>Bachelor of Science in Computer Science</h4>
+                    </div>
+                    <h5> My name is Alejandro Moracen. I am an aspiring Software Engineer studying Computer Science at
+                        Florida Atlantic University. I was born in Cuba and moved to Florida in 2012. I have taken
+                        classes in Object-Oriented Programming, Computer Architecture, Algorithms, Databases, and Full
+                        Stack Web Development. Through my academic work and my interest, I have learned Java, Python,
+                        C++, JavaScript, HTML, and CSS. I have used tools such as MySQL, GIT for version control, and
+                        Bootstrap.
+                    </h5>
+                    <h5>I’m </h5>
+                    <h3 class="sideline font-weight-bold mb-3">Hobbies and Interests</h3>
+                    <div class="row interests">
+                        <div class="col-4 col-md-4 col-lg-3 text-center mt-3">
+                            <i>
+                                <fa-icon [icon]="['fas', 'baseball-ball']"></fa-icon>
+                            </i>
+                            <h6 class="font-weight-bold">Sports</h6>
+                        </div>
+                        <div class="col-4 col-md-4 col-lg-3 text-center mt-3">
+                            <i>
+                                <fa-icon [icon]="['fas', 'tree']"></fa-icon>
+                            </i>
+                            <h6 class="font-weight-bold">Outdoors</h6>
+                        </div>
+                        <div class="col-4 col-md-4 col-lg-3 text-center mt-3">
+                            <i>
+                                <fa-icon [icon]="['fas', 'desktop']"></fa-icon>
+                            </i>
+                            <h6 class="font-weight-bold">Computers</h6>
+                        </div>
+                        <div class="col-4 col-md-4 col-lg-3 text-center mt-3">
+                            <i>
+                                <fa-icon [icon]="['fas', 'plane']"></fa-icon>
+                            </i>
+                            <h6 class="font-weight-bold">Travel</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Porfolio Section -->
+            <div id="portfolio" class="col-12 col-sm-12 col-md-12 col-lg-8 content text-center active "
+                *ngIf="isViewablePorfolio">
+                <div class="card">
+                    <div class="row mb-2">
+                        <button class="btn btn-md btn-primary mx-auto" [class.active]="filterBy==='all'"
+                            (click)="filterBy='all'">Selected Projects</button>
+                        <button class="btn btn-md btn-primary mx-auto" [class.active]="filterBy==='Website'"
+                            (click)="filterBy='Website'">Websites</button>
+                        <button class="btn btn-md btn-primary mx-auto" [class.active]="filterBy==='App'"
+                            (click)="filterBy='App'">App Development</button>
+                        <button class="btn btn-md btn-primary mx-auto" [class.active]="filterBy==='Java'"
+                            (click)="filterBy='Java'">Java Application</button>
+                    </div>
+                    <div class="row porfolioScrollBar pt-2">
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-2"
+                            *ngFor="let project of(visibleProjects | projectFilter:filterBy)">
+                            <div class="card h-80">
+                                <a href="{{project.http}} " target="_blank"><img class="card-img-top"
+                                        src="{{project.url}}" alt=""></a>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="#">{{project.caption}}</a>
+                                    </h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, </p>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="#" class="btn btn-primary btn-block float-left" role="button"
+                                        aria-pressed="true">Source Code</a>
+                                    <a href="{{project.http}}" target="_blank"
+                                        class="btn btn-primary btn-block float-right" role="button"
+                                        aria-pressed="true">Website</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Section -->
+            <div id="contact" class="col-12 col-sm-12 col-md-12 col-lg-8 content contact active"
+                *ngIf="isViewableContact">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <h3 class="font-weight-bold sideline">Contact</h3>
+                            <p>If you would like to get in touch with me feel free to fill out this contact form.
+                                Thanks!</p>
+                            <ul class="list-unstyled">
+                                <li class="font-weight-bold"><a href="mailto:email@gmail.com"><i
+                                            class="far fa-envelope mr-2"></i>Email: email@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <form action="#" class="card">
+                                <div class="form-group">
+                                    <label for="full-name label">Full name</label>
+                                    <input type="text" class="form-control" id="full-name" placeholder="Full name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message:</label>
+                                    <textarea class="form-control" rows="2" id="message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
