@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'Personal Website';
+	public reload(): void {
+		location.reload();
+	}
 }
