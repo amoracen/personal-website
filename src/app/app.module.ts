@@ -19,10 +19,12 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { HomeComponent } from './home/home.component';
 import { ProjectService } from './home/project.service';
 import { ProjectFilterPipe } from './home/filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [ AppComponent, HomeComponent, ProjectFilterPipe ],
-	imports: [ BrowserModule, AppRoutingModule, FontAwesomeModule ],
+	imports: [ BrowserModule, AppRoutingModule, FontAwesomeModule, HttpClientModule, FormsModule, ReactiveFormsModule ],
 	providers: [ ProjectService, ProjectFilterPipe ],
 	bootstrap: [ AppComponent ]
 })
